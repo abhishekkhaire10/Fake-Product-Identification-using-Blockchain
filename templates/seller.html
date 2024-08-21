@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Fake Product Scanner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="static/style.css">
+
+	</head>
+	<body>
+		<section class="ftco-section">
+			<div class="container-fluid px-md-3">
+				<div class="row justify-content-between">
+					<div class="col-md-8 order-md-last">
+						<div class="row">
+							<div class="col-md-6 text-center">
+								<a class="navbar-brand" href="manufacturer.html">Fake Product Detection <span>through Blockchain</span></a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container-fluid">
+			
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <!-- <div class="collapse navbar-collapse" id="ftco-nav"> -->
+				<ul class="navbar-nav m-auto">
+					<!-- <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> -->
+					<li class="nav-item active"><a href="{{url_for('home')}}" class="nav-link">Manufacturer</a></li>
+					<li class="nav-item"><a href="{{url_for('seller')}}" class="nav-link">Seller</a></li>
+					  <li class="nav-item"><a href="{{url_for('customer')}}" class="nav-link">Customer</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		<!-- END nav -->
+
+	</section>
+    <section>
+        <div class="container">
+            <h2>Tagged Products</h2>
+            <p>Following were the products tagged through Blockchain Network</p>
+
+			<form action="" method="POST" >
+				<label>Sell Product</label>
+				<input type="text" class="form-control" id="pOwner" placeholder="Enter Product ID to sell" name="product_id_sell">	
+				<button type="submit" class="btn btn-warning btn-register" id="register">Sell Product</button>
+			</form>
+
+			<form action="" method="POST" >
+				<label for="email">View Products</label>
+				<input type="text" class="form-control" id="pOwner" placeholder="Enter Seller ID" name="product_id_view">	
+				<button type="submit" class="btn btn-warning btn-register" id="register">View Product</button>
+			</form>
+
+            <table class="table">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Status</th>
+                    </tr>
+					{% for row in content %}
+					<tr>
+						<td>
+							{{row[0]}}
+						</td>
+						<td>
+							{{row[1]}}
+						</td>
+						<td>
+							{{row[2]}}
+						</td>
+					</tr>
+					{% endfor %}
+            </table>
+            <!-- <center><p>Your address is <b id="add"></b></p></center> -->
+        </div>
+    </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+
+
